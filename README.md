@@ -11,15 +11,20 @@ Collect and send page performance metrics with ease
 
 ##### Table of contents
 
+- [What is it](#what-is-it)
 - [Installation](#installation)
 - [Events](#events)
 - [Customization](#customization)
 - [Browser compatibility](#browser-compatibility)
 - [About SumUp](#about-sumup)
 
+## What is it
+
+Signal is a script that collects specific page performance events and sends them to a configurable service url.
+
 ## Installation
 
-At the moment Signal is distributed as a `<script />`. In order to build your version of it, follow these steps:
+At the moment Signal is distributed as a _script_. Meaning you have to build your own version and embed it in your web page. In order to build your version of it, follow these steps:
 
 Clone the repo using SSH
 
@@ -66,7 +71,7 @@ Copy the output from `build/perf.js`
 pbcopy < build/perf.js
 ```
 
-Add the script to the <head> of your html file. This is required due to how you [collect the time-to-interactive](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_tti) metric.
+Add the script to the `<head>` tag of your html file. This is required due to how you [collect the time-to-interactive](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_tti) metric.
 
 ## Events
 
