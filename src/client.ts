@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2020, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,10 @@
 
 import { IEnhancedMetric } from './types';
 
-const URL = process.env.SERVICE_URL as string;
+export const send = (events: IEnhancedMetric[]): void => {
+  const { SERVICE_URL } = process.env;
 
-export const send = (events: IEnhancedMetric[]) =>
-  navigator.sendBeacon(URL, JSON.stringify(events));
+  if (SERVICE_URL) {
+    navigator.sendBeacon(SERVICE_URL, JSON.stringify(events));
+  }
+};

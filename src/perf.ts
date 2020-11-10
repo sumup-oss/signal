@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2020, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,49 +15,45 @@
 
 import './tti-bootstrap';
 import ttiPolyfill from 'tti-polyfill';
+import {
+  IMetric,
+  observeAll,
+  metricHistory,
+  registeredObservers,
+} from '@sumup/performance-observer';
 
+import { metrics, formatValue } from './metrics';
 import { send } from './client';
 import { enhance } from './event';
 
 if ('sendBeacon' in navigator && 'PerformanceObserver' in window) {
-  const observer = new PerformanceObserver((list): void => {
-    const entries = list.getEntries();
+  window.__PERF_DEBUG_DATA__ = {
+    metrics,
+    metricHistory,
+    registeredObservers,
+  };
+  observeAll(metrics, (metric: IMetric) => {
+    send([
+      enhance({
+        event_type: metric.name,
+        performance: formatValue(metric),
+      }),
+    ]);
+  });
 
-    for (const entry of entries) {
-      /**
-       * 'name' will be either 'first-paint' or 'first-contentful-paint'.
-       */
-      const metricName = entry.name;
-      const time = Math.floor(entry.startTime + entry.duration);
-
-      if (metricName) {
+  ttiPolyfill
+    .getFirstConsistentlyInteractive()
+    .then((tti) => {
+      if (tti) {
         send([
           enhance({
-            event_type: metricName,
-            performance: time
-          })
+            event_type: 'time-to-interactive',
+            performance: Math.floor(tti),
+          }),
         ]);
       }
-    }
-  });
-
-  /**
-   * Due to browser inconsistency, the try/catch block prevents unhandled
-   * exceptions from browsers who support the Observer, but not the entries
-   */
-  try {
-    observer.observe({ entryTypes: ['paint'] });
-  } catch (e) {}
-
-  ttiPolyfill.getFirstConsistentlyInteractive().then((tti: number): void => {
-    tti &&
-      send([
-        enhance({
-          event_type: 'time-to-interactive',
-          performance: Math.floor(tti)
-        })
-      ]);
-  });
+    })
+    .catch(() => {});
 }
 
 if ('sendBeacon' in navigator && 'performance' in window) {
@@ -67,31 +63,28 @@ if ('sendBeacon' in navigator && 'performance' in window) {
       domInteractive,
       domContentLoadedEventStart,
       domLoading,
-      domComplete
+      domComplete,
     } = window.performance.timing;
 
     send(
       [
-        /**
-         * Here you can collect/send additional events
-         */
         {
           event_type: 'dom-interactive',
-          performance: domInteractive - navigationStart
+          performance: domInteractive - navigationStart,
         },
         {
           event_type: 'dom-content-loaded',
-          performance: domContentLoadedEventStart - domLoading
+          performance: domContentLoadedEventStart - domLoading,
         },
         {
           event_type: 'dom-loading',
-          performance: domLoading - navigationStart
+          performance: domLoading - navigationStart,
         },
         {
           event_type: 'dom-complete',
-          performance: domComplete - navigationStart
-        }
-      ].map(e => enhance(e))
+          performance: domComplete - navigationStart,
+        },
+      ].map((e) => enhance(e)),
     );
   });
 }

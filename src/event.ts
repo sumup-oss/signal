@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2020, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,16 +14,12 @@
  */
 
 import { IRawMetric, IEnhancedMetric } from './types';
-
 import { getCookie } from './cookies';
 import { getConnectionInfo } from './connection';
 
 export const enhance = (event: IRawMetric): IEnhancedMetric => {
   const { type, effectiveType } = getConnectionInfo();
 
-  /**
-   * Here you can enhance your event before sending it to the server
-   */
   return {
     ...event,
     event_name: 'load performance tracking',
@@ -33,6 +29,6 @@ export const enhance = (event: IRawMetric): IEnhancedMetric => {
     effective_connection_type: effectiveType,
     url: encodeURIComponent(window.location.href),
     timestamp: Date.now(),
-    application: process.env.APPLICATION_NAME as string
+    application: process.env.APPLICATION_NAME || '',
   };
 };

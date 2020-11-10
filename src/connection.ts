@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2020, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,13 @@
  * limitations under the License.
  */
 
-export const getConnectionInfo = () => {
+// These rules were disabled due to the connection API being experimental
+
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
+
+import { IConnectionInfo } from './types';
+
+export const getConnectionInfo = (): IConnectionInfo => {
   const { type = null, effectiveType = null } =
     (navigator as any).connection ||
     (navigator as any).mozConnection ||
@@ -22,6 +28,6 @@ export const getConnectionInfo = () => {
 
   return {
     type,
-    effectiveType
+    effectiveType,
   };
 };
