@@ -1,3 +1,14 @@
+[![License](https://img.shields.io/badge/license-Apache%202-lightgrey.svg)](LICENSE)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+
+<div align="center">
+
+# Signal
+
+Collect and send page performance metrics with ease
+
+</div>
+
 ##### Table of contents
 
 - [What is it](#what-is-it)
@@ -57,17 +68,13 @@ The url where events will be send to
 
 ### Application name (optional)
 
-This is app's identifier and is useful when you have more than one application which is sending events -
-
-```bash
-APPLICATION_NAME="my-app-name"
-```
+This is app's identifier and is useful when you have more than one application which is sending events
 
 ### Performance observer metrics (optional)
 
 You can configure which metrics supported by [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) you want to track by specifying them in comma-separated list.
 
-Please keep in mind that these 3 metrics are included by default:
+Please keep in mind that these 6 metrics are included by default:
 
 - first-paint
 - first-contentful-paint
