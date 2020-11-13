@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, SumUp Ltd.
+ * Copyright 2020, SumUp Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,18 +13,20 @@
  * limitations under the License.
  */
 
-/**
- * Creates a PerformanceObserver instance and starts observing longtask entry types.
+/** Creates a PerformanceObserver instance and starts observing longtask entry types.
  * This snippet is a temporary workaround, until browsers implement level 2
  * of the Performance Observer spec and include the buffered flag
+ * https://github.com/GoogleChromeLabs/tti-polyfill
  */
-
-(function(): void {
+(function bootstrap(): void {
   if ('PerformanceLongTaskTiming' in window) {
-    const g = ((window as any).__tti = { e: [] }) as any;
-    g.o = new PerformanceObserver((l: PerformanceObserverEntryList): void => {
-      g.e = g.e.concat(l.getEntries());
-    });
-    g.o.observe({ entryTypes: ['longtask'] });
+    window.__tti = {
+      e: [],
+      o: new PerformanceObserver((l: PerformanceObserverEntryList): void => {
+        window.__tti.e.push(l.getEntries());
+      }),
+    };
+
+    window.__tti.o.observe({ entryTypes: ['longtask'] });
   }
 })();

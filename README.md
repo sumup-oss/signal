@@ -13,9 +13,13 @@ Collect and send page performance metrics with ease
 
 - [What is it](#what-is-it)
 - [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
 - [Events](#events)
 - [Customization](#customization)
 - [Browser compatibility](#browser-compatibility)
+- [Code of Conduct](#code-of-conduct)
+- [Maintainers](#maintainers)
 - [About SumUp](#about-sumup)
 
 ## What is it
@@ -53,9 +57,39 @@ cp .env.example .env
 The `.env` file contains the following values:
 
 ```bash
-SERVICE_URL="" # (Required) The endpoint where events will be send to
-APPLICATION_NAME="" # (Optional) the application identier. This is useful when you have more than one application sending events
+SERVICE_URL=""
+APPLICATION_NAME=""
+PERFORMANCE_OBSERVER_METRICS=""
 ```
+
+### Service url (mandatory)
+
+The url where events will be send to
+
+### Application name (optional)
+
+This is app's identifier and is useful when you have more than one application which is sending events
+
+### Performance observer metrics (optional)
+
+You can configure which metrics supported by [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) you want to track by specifying them in comma-separated list.
+
+Please keep in mind that these 6 metrics are included by default:
+
+- first-paint
+- first-contentful-paint
+- largest-contentful-paint
+- first-input-delay
+- cumulative-layout-shift
+- time-to-first-byte
+
+In the example below [custom user metrics](https://web.dev/custom-metrics/#user-timing-api) are enabled additionally to the default FCP and FID metrics -
+
+```bash
+PERFORMANCE_OBSERVER_METRICS="first-paint,first-contentful-paint,first-input-delay,user-timing"
+```
+
+## Usage
 
 Now you are ready to build the script. If you want to customize the events, please refer to [Customization](#customization).
 
@@ -75,23 +109,55 @@ Add the script to the `<head>` tag of your html file. This is required due to ho
 
 ## Events
 
+Here's the full list of events that this script supports out of the box.
+
 The events are provided by both the [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) and [PerformanceTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) APIs.
 
-### Via PerformanceObserver ([paint entry](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming))
+### Via PerformanceObserver
 
-- first-paint
-- first-contentful-paint
-
-### Via PerformanceObserver ([longtask entry](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming))
-
-- time-to-interactive
+- [x] first-paint ("paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] first-contentful-paint ("paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming
+  - https://web.dev/fcp
+- [x] first-input-delay ("first-input" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://developer.mozilla.org/en-US/docs/Glossary/First_input_delay
+  - https://web.dev/fid
+- [x] largest-contentful-paint ("largest-contentful-paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint
+  - https://web.dev/lcp
+- [x] cumulative-layout-shift ("layout-shift" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://web.dev/cls
+- [x] time-to-first-byte ("navigation" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://web.dev/custom-metrics/#navigation-timing-api
+  - https://web.dev/time-to-first-byte
+- [x] user-timing ("measure" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasure
+  - https://web.dev/custom-metrics/#user-timing-api
+- [x] element-timing ("element" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://web.dev/custom-metrics/#element-timing-api
+- [x] resource-timing ("resource" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming
+  - https://web.dev/custom-metrics/#resource-timing-api
+- [x] navigation-timing ("navigation" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming
+  - https://web.dev/custom-metrics/#navigation-timing-api
+- [x] time-to-interactive _always enabled_ ("longtask" entry)
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming
+  - https://web.dev/custom-metrics/#long-tasks-api
+  - https://web.dev/tti
 
 ### Via PerformanceTiming
 
-- dom-interactive
-- dom-content-loaded
-- dom-loading
-- dom-complete
+- [x] dom-interactive _always enabled_
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domInteractive
+- [x] dom-content-loaded _always enabled_
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domContentLoadedEventEnd
+- [x] dom-loading _always enabled_
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domLoading
+- [x] dom-complete _always enabled_
+  - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domComplete
+
+More detailed documentation about each metric, how they relate to each other and how they should be used can be found in Confluence - https://sumupteam.atlassian.net/wiki/spaces/DEV/pages/1431569763/Tracking+Performance.
 
 Keep in mind each API has a different browser support. Please refer to [Browser compatibility](#browser-compatibility) section for more info on it.
 
@@ -147,19 +213,27 @@ The script is powered by three APIs:
 
 If `sendBeacon` isn't available, the script won't be executed. There isn't a fallback with XHR due to the blocking nature of it.
 
-Since each type of event has a different browser support, please refer to the table to understand which events you can support:
+Since each type of event has a different browser support, please refer to the table to understand which events you can support. The majority of the [PerformanceObserver APIs](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) that are required to get metric values, are only available in Chromium-based browsers (e.g. Google Chrome, Microsoft Edge, Opera, Brave, Samsung Internet, etc.).:
 
-| Event                  |                                          Browser                                          |
-| ---------------------- | :---------------------------------------------------------------------------------------: |
-| first-paint            |                                        Chrome only                                        |
-| first-contentful-paint |                                        Chrome only                                        |
-| time-to-interactive    |                                        Chrome only                                        |
-| dom-interactive        | [Every major browser](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) |
-| dom-content-loaded     | [Every major browser](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) |
-| dom-loading            | [Every major browser](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) |
-| dom-complete           | [Every major browser](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) |
+| Event                    |                                          Browser                                          |
+| ------------------------ | :---------------------------------------------------------------------------------------: |
+| first-paint              |                                         Chromium                                          |
+| first-contentful-paint   |                                         Chromium                                          |
+| largest-contentful-paint |                                         Chromium                                          |
+| first-input-delay        |                                         Chromium                                          |
+| cumulative-layout-shift  |                                         Chromium                                          |
+| time-to-first-byte       |                                     Chromium, Firefox                                     |
+| time-to-interactive      |                                         Chromium                                          |
+| user-timing              |                                     Chromium, Firefox                                     |
+| element-timing           |                                         Chromium                                          |
+| resource-timing          |                                     Chromium, Firefox                                     |
+| navigation-timing        |                                     Chromium, Firefox                                     |
+| dom-interactive          | [Every major browser](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) |
+| dom-content-loaded       | [Every major browser](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) |
+| dom-loading              | [Every major browser](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) |
+| dom-complete             | [Every major browser](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) |
 
-## Code of conduct (CoC)
+## Code of conduct
 
 We want to foster an inclusive and friendly community around our Open Source efforts. Like all SumUp Open Source projects, this project follows the Contributor Covenant Code of Conduct. Please, [read it and follow it](CODE_OF_CONDUCT.md).
 
