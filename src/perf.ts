@@ -27,11 +27,6 @@ import { send } from './client';
 import { enhance } from './event';
 
 if ('sendBeacon' in navigator && 'PerformanceObserver' in window) {
-  window.__PERF_DEBUG_DATA__ = {
-    metrics,
-    metricHistory,
-    registeredObservers,
-  };
   observeAll(metrics, (metric: IMetric) => {
     send([
       enhance({

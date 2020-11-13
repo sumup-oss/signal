@@ -21,11 +21,6 @@ import {
 
 declare global {
   interface Window {
-    __PERF_DEBUG_DATA__: {
-      metrics: IMetricName[];
-      metricHistory: IMetricHistory;
-      registeredObservers: IPerformanceObservers;
-    };
     __tti: {
       e: PerformanceEntryList[];
       o: PerformanceObserver;
