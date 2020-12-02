@@ -57,10 +57,15 @@ cp .env.example .env
 The `.env` file contains the following values:
 
 ```bash
+SIGNAL_VERSION=""
 SERVICE_URL=""
 APPLICATION_NAME=""
 PERFORMANCE_OBSERVER_METRICS=""
 ```
+
+### Signal version (mandatory - pre-filled)
+
+Which version of the Signal snippet is currently running when sending the events
 
 ### Service url (mandatory)
 
@@ -175,14 +180,15 @@ By default each event is enhanced with the following metadata:
 
 ```js
 {
-  event_name,
-    user_agent,
-    google_analytics_client_id,
-    connection_type,
-    effective_connection_type,
-    url,
-    timestamp,
-    application;
+  signal_version;
+  event_name;
+  user_agent;
+  google_analytics_client_id;
+  connection_type;
+  effective_connection_type;
+  url;
+  timestamp;
+  application;
 }
 ```
 

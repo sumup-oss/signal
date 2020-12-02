@@ -22,6 +22,7 @@ export const enhance = (event: IRawMetric): IEnhancedMetric => {
 
   return {
     ...event,
+    signal_version: process.env.SIGNAL_VERSION || '',
     event_name: 'load performance tracking',
     user_agent: window.navigator.userAgent,
     google_analytics_client_id: getCookie('_ga'),
