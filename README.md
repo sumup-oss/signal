@@ -115,30 +115,30 @@ The events are provided by both the [PerformanceObserver](https://developer.mozi
 
 ### Via PerformanceObserver
 
-- [x] first-paint ("paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
-- [x] first-contentful-paint ("paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] first-paint ("paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
+- [x] first-contentful-paint ("paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming
   - https://web.dev/fcp
-- [x] first-input-delay ("first-input" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] first-input-delay ("first-input" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://developer.mozilla.org/en-US/docs/Glossary/First_input_delay
   - https://web.dev/fid
-- [x] largest-contentful-paint ("largest-contentful-paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] largest-contentful-paint ("largest-contentful-paint" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint
   - https://web.dev/lcp
-- [x] cumulative-layout-shift ("layout-shift" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] cumulative-layout-shift ("layout-shift" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://web.dev/cls
-- [x] time-to-first-byte ("navigation" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] time-to-first-byte ("navigation" entry) _enabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://web.dev/custom-metrics/#navigation-timing-api
   - https://web.dev/time-to-first-byte
-- [x] user-timing ("measure" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] user-timing ("measure" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasure
   - https://web.dev/custom-metrics/#user-timing-api
-- [x] element-timing ("element" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] element-timing ("element" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://web.dev/custom-metrics/#element-timing-api
-- [x] resource-timing ("resource" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] resource-timing ("resource" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming
   - https://web.dev/custom-metrics/#resource-timing-api
-- [x] navigation-timing ("navigation" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/master/perf-script#performance-observer-metrics-optional)_
+- [x] navigation-timing ("navigation" entry) _disabled by default, controlled via [config](https://github.com/sumup-oss/signal/tree/main/perf-script#performance-observer-metrics-optional)_
   - https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming
   - https://web.dev/custom-metrics/#navigation-timing-api
 - [x] time-to-interactive _always enabled_ ("longtask" entry)
@@ -245,7 +245,7 @@ If you feel another member of the community violated our CoC or you are experien
 
 ## About SumUp
 
-![SumUp logo](https://raw.githubusercontent.com/sumup-oss/assets/master/sumup-logo.svg?sanitize=true)
+![SumUp logo](https://raw.githubusercontent.com/sumup-oss/assets/main/sumup-logo.svg?sanitize=true)
 
 [SumUp](https://sumup.com) is a mobile-point of sale provider. It is our mission to make easy and fast card payments a reality across the _entire_ world. You can pay with SumUp in more than 30 countries, already. Our engineers work in Berlin, Cologne, Sofia, and Sāo Paulo. They write code in JavaScript, Swift, Ruby, Go, Java, Erlang, Elixir, and more.
 
