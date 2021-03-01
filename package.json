@@ -19,7 +19,7 @@
     "@types/jest": "^26.0.20",
     "@types/tti-polyfill": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
-    "@typescript-eslint/parser": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.2",
     "cz-conventional-changelog": "3.3.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "jest": "^25.1.0",
