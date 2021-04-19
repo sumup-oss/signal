@@ -15,7 +15,7 @@
     "lint:ci": "yarn lint --format junit -o __reports__/eslint-results.xml"
   },
   "devDependencies": {
-    "@sumup/foundry": "^3.2.0",
+    "@sumup/foundry": "^4.0.0-canary",
     "@types/jest": "^26.0.22",
     "@types/tti-polyfill": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
