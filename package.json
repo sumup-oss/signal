@@ -35,7 +35,7 @@
     "@rollup/plugin-typescript": "^8.2.1",
     "@sumup/performance-observer": "^1.0.2",
     "dotenv": "^10.0.0",
-    "rollup": "^2.51.0",
+    "rollup": "^2.51.2",
     "rollup-plugin-terser": "^7.0.2",
     "tti-polyfill": "^0.2.2"
   },
