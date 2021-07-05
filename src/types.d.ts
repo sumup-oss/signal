@@ -19,6 +19,7 @@ export interface IRawMetric {
 }
 
 export interface IEnhancedMetric extends IRawMetric {
+  signal_version: string | null;
   event_name: string;
   user_agent: string;
   google_analytics_client_id: string | null;

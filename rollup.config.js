@@ -8,6 +8,7 @@ import strip from '@rollup/plugin-strip';
 import { terser } from 'rollup-plugin-terser';
 
 const {
+  VERSION,
   SERVICE_URL,
   APPLICATION_NAME,
   PERFORMANCE_OBSERVER_METRICS,
@@ -23,6 +24,7 @@ export default {
   ],
   plugins: [
     replace({
+      'process.env.SIGNAL_VERSION': JSON.stringify(SIGNAL_VERSION),
       'process.env.SERVICE_URL': JSON.stringify(SERVICE_URL),
       'process.env.APPLICATION_NAME': JSON.stringify(APPLICATION_NAME),
       'process.env.PERFORMANCE_OBSERVER_METRICS': JSON.stringify(
