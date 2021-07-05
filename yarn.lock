@@ -1065,10 +1065,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/tti-polyfill@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@types/tti-polyfill/-/tti-polyfill-0.2.0.tgz#e75cca586f867d904e81264ad7b8e2c117d107fe"
-  integrity sha512-Ki90Cpjq276fx+dMCuQ+XCBGc5XQUcUxWiSgGzMwFjgaYq8zo3tBA3JWpgnwGobUDeMoob357ngCZGlRCoR2Bg==
+"@types/tti-polyfill@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@types/tti-polyfill/-/tti-polyfill-0.2.1.tgz#5eba5f7bc27c812a67534ade816197e5090e5af1"
+  integrity sha512-C7psWv1GMxfm/eZyU4upmonP3036bwV2VNmHakOTIKULme4+da4rGCZaNWX/o8CWa3raf9Ogrhk8s0ODfcqzBw==
 
 "@types/yargs-parser@*":
   version "15.0.0"
