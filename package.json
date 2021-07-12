@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@sumup/foundry": "^4.0.0-canary.9",
-    "@types/jest": "^26.0.23",
+    "@types/jest": "^26.0.24",
     "@types/tti-polyfill": "^0.2.1",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
