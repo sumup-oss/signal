@@ -3060,6 +3060,11 @@ eslint-config-airbnb-typescript@^12.3.1:
     eslint-config-airbnb "^18.2.0"
     eslint-config-airbnb-base "^14.2.0"
 
+eslint-config-airbnb-typescript@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-typescript/-/eslint-config-airbnb-typescript-13.0.0.tgz#161507d1be79aea5ffe7ee2b0d14ad8222fe4109"
+  integrity sha512-ILlBPRdEeNavuZl6Wcjsese/vxMI4E8WM4xqCXLFyOHA1HFicpuTys9ikCk872vFK009WvhtT+rCl0R1Uadqcw==
+
 eslint-config-airbnb@^18.2.0:
   version "18.2.1"
   resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-18.2.1.tgz#b7fe2b42f9f8173e825b73c8014b592e449c98d9"
