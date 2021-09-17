@@ -19,7 +19,7 @@
 
 import { IConnectionInfo } from './types';
 
-export const getConnectionInfo = (): IConnectionInfo => {
+export function getConnectionInfo(): IConnectionInfo {
   const { type = null, effectiveType = null } =
     (navigator as any).connection ||
     (navigator as any).mozConnection ||
@@ -30,4 +30,4 @@ export const getConnectionInfo = (): IConnectionInfo => {
     type,
     effectiveType,
   };
-};
+}

@@ -13,11 +13,7 @@
  * limitations under the License.
  */
 
-import {
-  IMetricName,
-  IMetricHistory,
-  IPerformanceObservers,
-} from '@sumup/performance-observer';
+import '@sumup/performance-observer';
 
 declare global {
   interface Window {

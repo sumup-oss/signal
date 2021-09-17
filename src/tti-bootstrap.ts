@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-/** Creates a PerformanceObserver instance and starts observing longtask entry types.
+/* eslint-disable no-underscore-dangle, wrap-iife */
+
+/**
+ * Creates a PerformanceObserver instance and starts observing longtask entry types.
  * This snippet is a temporary workaround, until browsers implement level 2
  * of the Performance Observer spec and include the buffered flag
  * https://github.com/GoogleChromeLabs/tti-polyfill
