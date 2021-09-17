@@ -30,7 +30,8 @@ const OVERWRITE_METRICS = process.env.PERFORMANCE_OBSERVER_METRICS?.split(',');
 
 export const metrics = (OVERWRITE_METRICS || DEFAULT_METRICS) as IMetricName[];
 
-export const formatValue = (metric: IMetric): number =>
-  metric.name === 'cumulative-layout-shift'
+export function formatValue(metric: IMetric): number {
+  return metric.name === 'cumulative-layout-shift'
     ? metric.value // https://web.dev/cls/#what-is-cls
     : Math.floor(metric.value);
+}

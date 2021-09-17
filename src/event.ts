@@ -17,7 +17,7 @@ import { IRawMetric, IEnhancedMetric } from './types';
 import { getCookie } from './cookies';
 import { getConnectionInfo } from './connection';
 
-export const enhance = (event: IRawMetric): IEnhancedMetric => {
+export function enhance(event: IRawMetric): IEnhancedMetric {
   const { type, effectiveType } = getConnectionInfo();
 
   return {
@@ -31,4 +31,4 @@ export const enhance = (event: IRawMetric): IEnhancedMetric => {
     timestamp: Date.now(),
     application: process.env.APPLICATION_NAME || '',
   };
-};
+}

@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-export const getCookie = (name: string): string | null => {
+export function getCookie(name: string): string | null {
   // eslint-disable-next-line @typescript-eslint/prefer-regexp-exec
   const entry = `; ${document.cookie}`.match(`;\\s*${name}=([^;]+)`);
   return entry ? entry[1] : null;
-};
+}

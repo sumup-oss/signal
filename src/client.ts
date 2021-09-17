@@ -15,10 +15,10 @@
 
 import { IEnhancedMetric } from './types';
 
-export const send = (events: IEnhancedMetric[]): void => {
+export function send(events: IEnhancedMetric[]): void {
   const { SERVICE_URL } = process.env;
 
   if (SERVICE_URL) {
     navigator.sendBeacon(SERVICE_URL, JSON.stringify(events));
   }
-};
+}
