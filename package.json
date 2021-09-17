@@ -14,18 +14,6 @@
     "lint:fix": "yarn lint --fix",
     "lint:ci": "yarn lint --format junit -o __reports__/eslint-results.xml"
   },
-  "devDependencies": {
-    "@sumup/foundry": "^4.0.1",
-    "@types/jest": "^27.0.1",
-    "@types/tti-polyfill": "^0.2.1",
-    "@typescript-eslint/eslint-plugin": "^4.31.0",
-    "@typescript-eslint/parser": "^4.31.0",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "jest": "^25.1.0",
-    "ts-jest": "^25.2.1",
-    "typescript": "^3.9.10"
-  },
   "dependencies": {
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -38,6 +26,17 @@
     "rollup": "^2.56.3",
     "rollup-plugin-terser": "^7.0.2",
     "tti-polyfill": "^0.2.2"
+  },
+  "devDependencies": {
+    "@sumup/foundry": "^4.0.1",
+    "@types/jest": "^27.0.1",
+    "@types/tti-polyfill": "^0.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "cz-conventional-changelog": "3.3.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.9.10"
   },
   "config": {
     "commitizen": {
