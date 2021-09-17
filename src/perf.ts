@@ -15,12 +15,7 @@
 
 import './tti-bootstrap';
 import ttiPolyfill from 'tti-polyfill';
-import {
-  IMetric,
-  observeAll,
-  metricHistory,
-  registeredObservers,
-} from '@sumup/performance-observer';
+import { IMetric, observeAll } from '@sumup/performance-observer';
 
 import { metrics, formatValue } from './metrics';
 import { send } from './client';
