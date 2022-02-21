@@ -28,7 +28,7 @@
     "tti-polyfill": "^0.2.2"
   },
   "devDependencies": {
-    "@sumup/foundry": "^4.0.1",
+    "@sumup/foundry": "^4.1.0",
     "@types/jest": "^27.4.0",
     "@types/tti-polyfill": "^0.2.1",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
