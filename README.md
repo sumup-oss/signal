@@ -2,7 +2,7 @@
 
 # Signal
 
-[![Stars](https://img.shields.io/github/stars/sumup-oss/signal?style=social)](https://github.com/sumup-oss/signal/) [![Coverage](https://img.shields.io/codecov/c/github/sumup-oss/signal)](https://codecov.io/gh/sumup-oss/signal) [![License](https://img.shields.io/github/license/sumup-oss/signal)](https://github.com/sumup-oss/signal/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](https://github.com/sumup-oss/signal/tree/main/CODE_OF_CONDUCT.md)
+[![Stars](https://img.shields.io/github/stars/sumup-oss/signal?style=social)](https://github.com/sumup-oss/signal/) [![Coverage](https://img.shields.io/codecov/c/github/sumup-oss/signal)](https://codecov.io/gh/sumup-oss/signal) [![License](https://img.shields.io/github/license/sumup-oss/signal)](https://github.com/sumup-oss/signal/blob/main/LICENSE) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg)](https://github.com/sumup-oss/signal/tree/main/CODE_OF_CONDUCT.md)
 
 Collect and send page performance metrics with ease
 
