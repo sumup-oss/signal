@@ -31,8 +31,6 @@
     "@sumup/foundry": "^5.0.0",
     "@types/jest": "^27.5.0",
     "@types/tti-polyfill": "^0.2.1",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
     "cz-conventional-changelog": "3.3.0",
     "jest": "^25.1.0",
     "ts-jest": "^25.2.1",
