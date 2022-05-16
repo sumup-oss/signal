@@ -16,6 +16,7 @@
 import { mocked } from 'ts-jest/utils';
 
 import { send } from './client';
+import { IEnhancedMetric } from './types';
 
 describe('client module', () => {
   const SERVICE_URL = 'http://service-url';
@@ -37,7 +38,7 @@ describe('client module', () => {
     it('should send all passed events', () => {
       mocked(navigator).sendBeacon = jest.fn();
 
-      const mockedEvents: any = [
+      const mockedEvents = [
         {
           event_type: 'first-paint',
         },
@@ -53,7 +54,7 @@ describe('client module', () => {
         {
           event_type: 'custom-component-render',
         },
-      ];
+      ] as IEnhancedMetric[];
 
       send(mockedEvents);
 
