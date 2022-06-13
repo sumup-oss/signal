@@ -20,7 +20,7 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-replace": "^4.0.0",
     "@rollup/plugin-strip": "^2.1.0",
-    "@rollup/plugin-typescript": "^8.3.2",
+    "@rollup/plugin-typescript": "^8.3.3",
     "@sumup/performance-observer": "^1.0.2",
     "dotenv": "^16.0.1",
     "rollup": "^2.75.5",
