@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-import { mocked } from 'ts-jest/utils';
-
 import { send } from './client';
 import { IEnhancedMetric } from './types';
 
@@ -36,7 +34,8 @@ describe('client module', () => {
   });
   describe('send()', () => {
     it('should send all passed events', () => {
-      mocked(navigator).sendBeacon = jest.fn();
+      const mockedNavigator = jest.mocked(navigator);
+      mockedNavigator.sendBeacon = jest.fn();
 
       const mockedEvents = [
         {
@@ -58,7 +57,7 @@ describe('client module', () => {
 
       send(mockedEvents);
 
-      expect(mocked(navigator).sendBeacon).toHaveBeenNthCalledWith(
+      expect(mockedNavigator.sendBeacon).toHaveBeenNthCalledWith(
         1,
         SERVICE_URL,
         JSON.stringify(mockedEvents),
