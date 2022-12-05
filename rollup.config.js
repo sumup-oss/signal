@@ -5,13 +5,10 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
 import strip from '@rollup/plugin-strip';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 
-const {
-  SERVICE_URL,
-  APPLICATION_NAME,
-  PERFORMANCE_OBSERVER_METRICS,
-} = process.env;
+const { SERVICE_URL, APPLICATION_NAME, PERFORMANCE_OBSERVER_METRICS } =
+  process.env;
 
 export default {
   input: 'src/perf.ts',
@@ -23,6 +20,7 @@ export default {
   ],
   plugins: [
     replace({
+      'preventAssignment': true,
       'process.env.SERVICE_URL': JSON.stringify(SERVICE_URL),
       'process.env.APPLICATION_NAME': JSON.stringify(APPLICATION_NAME),
       'process.env.PERFORMANCE_OBSERVER_METRICS': JSON.stringify(
