@@ -27,7 +27,7 @@
     "@rollup/plugin-strip": "^3.0.2",
     "@rollup/plugin-typescript": "^10.0.1",
     "@sumup/foundry": "^5.1.0",
-    "@types/jest": "^29.2.4",
+    "@types/jest": "^29.2.5",
     "@types/tti-polyfill": "^0.2.1",
     "cz-conventional-changelog": "3.3.0",
     "dotenv": "^16.0.3",
