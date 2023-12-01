@@ -1129,10 +1129,10 @@
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-4.0.2.tgz#6286b4c7228d58ab7866d19716f3696e03a09397"
   integrity sha512-Q5vtl1W5ue16D+nIaW8JWebSSraJVlK+EthKn7e7UcD4KWsaSJ8BqGPXNaPghgtcn/fhvrN17Tv8ksUsQpiplw==
 
-"@types/tti-polyfill@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@types/tti-polyfill/-/tti-polyfill-0.2.2.tgz#3fa1bafd95e588fde64c0d016d8eb8a18c67d433"
-  integrity sha512-bAPEmvJuy9KGDV2NmxNLI3Jsz8eMPjwEQyt/C00w/r6UEKOie6ML5k/yNg+8wypBAQcSpXB4UYKuAAa5UKDRGA==
+"@types/tti-polyfill@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@types/tti-polyfill/-/tti-polyfill-0.2.4.tgz#fd83cfb959536bbffe66a888f8db1b07bb2d30ed"
+  integrity sha512-7/WoFdzKKNBSnZD/aCDt9meCg7wq/rpT2WUT7pyp7UPshTGJt6h7qGUUPYF4EB8zdFrT+4EpVwW6uHQ5niO5vQ==
 
 "@types/yargs-parser@*":
   version "15.0.0"
