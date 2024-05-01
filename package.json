@@ -36,7 +36,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "rollup": "^4.17.2",
     "ts-jest": "^29.1.2",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.5"
   },
   "config": {
     "commitizen": {
