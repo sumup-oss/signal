@@ -26,7 +26,7 @@
     "@rollup/plugin-strip": "^3.0.4",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
-    "@sumup/foundry": "^7.1.1",
+    "@sumup/foundry": "^7.2.0",
     "@types/jest": "^29.5.12",
     "@types/tti-polyfill": "^0.2.4",
     "cz-conventional-changelog": "3.3.0",
