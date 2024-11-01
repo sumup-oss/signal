@@ -25,7 +25,7 @@
     "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-strip": "^3.0.4",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-typescript": "^12.1.1",
     "@sumup/foundry": "^7.2.0",
     "@types/jest": "^29.5.14",
     "@types/tti-polyfill": "^0.2.4",
