@@ -30,7 +30,7 @@
     "@types/jest": "^29.5.14",
     "@types/tti-polyfill": "^0.2.4",
     "cz-conventional-changelog": "3.3.0",
-    "dotenv": "^16.4.7",
+    "dotenv": "^17.0.0",
     "eslint-plugin-jest": "^28.11.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
